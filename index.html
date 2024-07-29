@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+    <style>
+        body
+        {
+            background-color: #212121;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1
+        {
+            font-size: 50px;
+        }
+        div
+        {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            align-items: center;
+        }
+        .box
+        {
+            height: 100px;
+            width: 100px;
+        }
+        #red { background-color: red; }
+        #blue { background-color: blue;}
+        #green { background-color: green;}
+        #yellow { background-color: yellow;}
+
+        #red:hover
+        {
+            transition: 0.5s;
+            scale: 1.1;
+        }
+        #blue:hover
+        {
+            transition: 0.5s;
+            scale: 1.1;
+        }
+        #green:hover
+        {
+            transition: 0.5s;
+            scale: 1.1;
+        }
+        #yellow:hover
+        {
+            transition: 0.5s;
+            scale: 1.1;
+        }
+        #relod
+        {
+            padding: 5px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Color Changing on click</h1>
+    <h2>Click on one box of your choice</h2>
+    <div>
+        <button class="box" id="red"></button>
+        <button class="box" id="blue"></button>
+        <button class="box" id="green"></button>
+        <button class="box" id="yellow"></button>
+    </div>
+    <button id="relod">RELOD</button>
+    <script>
+        let buttons = document.querySelectorAll('.box');
+        let body = document.querySelector('body');
+        buttons.forEach((buttons)=>{
+            buttons.addEventListener('click',function(e){
+                body.style.backgroundColor = e.target.id
+                if (e.target.id !== 'yellow')
+                {
+                    body.style.color = 'white';
+                }
+                else
+                {
+                    body.style.color = 'black';
+                }
+            },false)
+        })
+        let relod = document.querySelector('#relod')
+        relod.addEventListener('click',function(){
+            body.style.backgroundColor = '#212121'
+            body.style.color = 'white';
+        },false)
+        
+    </script>
+</body>
+</html>
